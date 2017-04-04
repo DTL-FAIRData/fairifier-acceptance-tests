@@ -37,12 +37,15 @@ class ExpressionPreviewDialogSpec extends GebReportingSpec {
         report "rdf menu opened"
         $("div.menu-container a.menu-item", 0).click()
         report "edit semantic model dialog opened"
-        $("a", text: "(row index) URI").click()
+        $("a.schema-alignment-node-tag", text: "(row index) URI").click()
         report "row uri dialog opened"
-        $("a[bind=rdf_cell_expr_preview]").click()
+        $("a[bind=rdf_cell_expr_preview]", text: "preview/edit").click()
         report "preview dialog opened"
         
+        waitFor { $("div.expression-preview-container") }
+        
         then:
-        $("div.expression-preview-container").$("tr", 1).$("td", 3).text() == "http://fairifier-dev.fair-dtls.surf-hosted.nl/0"
+        def base = System.getProperty("geb.build.baseUrl")
+        $("div.expression-preview-container").$("tr", 1).$("td", 3).text() == "${base}/0"
     }
 }

@@ -1,4 +1,5 @@
 # fairifier-acceptance-tests
+[![Build Status](https://travis-ci.org/DTL-FAIRData/fairifier-acceptance-tests.svg?branch=develop)](https://travis-ci.org/DTL-FAIRData/fairifier-acceptance-tests)
 Geb powered automated acceptance testing for the fairifier.
 
 ## requirements

@@ -76,7 +76,6 @@
                         <geb.build.reportsDir>${project.build.directory}/test-reports/geb</geb.build.reportsDir>
                         <geb.build.baseUrl>http://${docker.host.address}:8888</geb.build.baseUrl>
                     </systemPropertyVariables>
-                    <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
                 <executions>
                     <execution>
